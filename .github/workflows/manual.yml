@@ -1,7 +1,12 @@
 name: manual workflow
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+   inputs:
+     name:
+      description: 'Name'
+      type: string
+      default: 'test'
 jobs:
   say-hello:
     runs-on: ubuntu-latest
