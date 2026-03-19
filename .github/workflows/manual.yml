@@ -7,13 +7,19 @@ on:
       description: 'Name'
       type: string
       default: 'test'
+    age:
+      description: 'Age'
+      type: number
+      required: true
+      
+      
 jobs:
   say-hello:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - name: greetings
+        run: echo "${{ input.name }}"
 
-      - name: Say Hello
-        run: echo "${{ inputs.name }}"
+      - name: Age
+        run: echo "${{ inputs.age }}"
